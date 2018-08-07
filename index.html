@@ -1,1 +1,153 @@
-wo de wang zhan
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<style>
+    #banner
+    {width: 600px;
+        height: 400px;
+        border: 1px solid #cccccc;
+        margin: 0 auto}
+    #top
+    {width: 600px;
+        height: 200px;
+        border-bottom:1px solid seagreen;
+    }
+    #top #anniu
+    {
+        width: 600px;
+        height: 50px;
+    }
+    #top #anniu #btn2
+    {
+        float:right;
+    }
+    #top #anniu #btn1
+    {
+        float:left;
+    }
+    #top #biaoqing
+    {
+        width: 300px;
+        height: 200px;
+        border: 1px solid #e20b0b;
+        position: absolute;
+        margin-left: 60px;
+        display: none;
+        background: white;
+    }
+    #top #biaoqing li
+    {
+        list-style: none;
+        margin: 0;
+        cursor: pointer;
+    }
+    #top #biaoqing li img
+    {
+        width: 60px;
+        height: 40px;
+        float: left;
+        margin:10px 10px 10px 0px;
+    }
+    #banner #xia
+       {
+           width: 600px;
+           margin: 15px auto 0;
+       }
+    #xia .mes-info{
+        width:600px;
+        height: 70px;
+    }
+    #xia .mes-info dl dt{
+        float: left;
+        margin-left: 20px;
+    }
+    #xia .mes-info img{
+        width: 80px;
+        height: 60px;
+    }
+    #xia .mes-info dl dd{
+        float: left;
+        line-height: 100px;
+    }
+    #xia .content{
+        width: 600px;
+        font-size: 16px;
+        line-height: 20px;
+        background: #CCCCCC;
+    }
+
+
+
+</style>
+<script>
+    window.onload=function() {
+    var oBtn1=document.querySelector('.btn1'),
+        obao=document.querySelector('.biaoqing');
+    var oLi=document.querySelectorAll('.biaoqing li')
+    var otxt=document.querySelector('.main_body');
+    var len=oLi.length;
+    oBtn1.onclick= function (e) {
+        e = e || window.event;
+        obao.style.display='block';
+        e.stopPropagation();
+    }
+    obao.onclick=function(e)
+    {
+        e = e ||window.event;
+        e.stopPropagation();//阻止冒泡
+    }
+    document.onclick=function()
+    {
+        obao.style.display='none';
+    }
+    for(var i=0;i<len;i++)
+    {
+      oLi[i].onclick=function()
+      {
+          var img=this.children[0].cloneNode();
+          otxt.appendChild(img);
+      }
+    }
+}
+</script>
+<body>
+ <div id="banner">
+     <div id="top">
+    <textarea id="main_body" cols="91" rows="11"></textarea>
+         <div id="anniu">
+        <input id="btn1" type="button" value="表情包"/>
+         <input type="button" value="发布" id="btn2"/>
+         </div>
+         <div id="biaoqing">
+        <ul>
+            <li><img src="imge/1.jpg"></li>
+            <li><img src="imge/2.jpg"></li>
+            <li><img src="imge/3.jpg"></li>
+            <li><img src="imge/4.jpg"></li>
+            <li><img src="imge/5.jpg"></li>
+            <li><img src="imge/6.jpg"></li>
+            <li><img src="imge/7.jpg"></li>
+            <li><img src="imge/8.jpg"></li>
+            <li><img src="imge/9.jpg"></li>
+        </ul>
+         </div>
+    </div>
+     <div id="xia">
+         <div class="mes-info">
+             <dl>
+                 <dt><img src="imge/7.jpg" alt=""/></dt>
+                 <dd>E哥</dd>
+             </dl>
+         </div>
+         <div class="content">
+         我是帅哥 我是帅哥 我是帅哥 我是帅哥 我是帅哥
+         </div>
+     </div>
+ </div>   
+</body>
+</html>
